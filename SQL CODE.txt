@@ -1,0 +1,8 @@
+CREATE TABLE Recipes (
+    Id INT IDENTITY(1,1) PRIMARY KEY,
+    Name NVARCHAR(255) CONSTRAINT UQ_Recipes_Name UNIQUE,
+    Description NVARCHAR(MAX),
+    Image VARBINARY(MAX),
+    RecipeTypeId INT,
+    FOREIGN KEY (RecipeTypeId) REFERENCES RecipeTypes(Id)
+)
